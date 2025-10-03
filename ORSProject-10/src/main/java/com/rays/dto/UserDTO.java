@@ -1,4 +1,3 @@
-
 package com.rays.dto;
 
 import java.sql.Timestamp;
@@ -178,7 +177,7 @@ public class UserDTO extends BaseDTO {
 
 	@Override
 	public String getValue() {
-		return firstName;
+		return null;
 	}
 
 	@Override
