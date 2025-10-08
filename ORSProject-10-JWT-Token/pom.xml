@@ -57,6 +57,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.11.0</version>
+		</dependency>
+		
 	</dependencies>
 	<build>
 		<finalName>ORSProject-10-JWT-Token</finalName>

@@ -21,6 +21,9 @@ public class UserDAOImpl extends BaseDAOImpl<UserDTO> implements UserDAOInt {
 	@Autowired
 	RoleDAOInt roleDao;
 
+	@Autowired
+	AttachmentDAOInt attachmentDao;
+
 	@Override
 	public Class<UserDTO> getDTOClass() {
 		return UserDTO.class;
@@ -36,6 +39,18 @@ public class UserDAOImpl extends BaseDAOImpl<UserDTO> implements UserDAOInt {
 			UserDTO userData = findByPK(dto.getId(), userContext);
 			dto.setLastLogin(userData.getLastLogin());
 		}
+		if (dto.getId() != null && dto.getId() > 0) {
+			UserDTO userData = findByPK(dto.getId(), userContext);
+			dto.setImageId(userData.getImageId());
+		}
+	}
+
+	@Override
+	public void delete(UserDTO dto, UserContext userContext) {
+		if (dto.getImageId() != null && dto.getImageId() > 0) {
+			attachmentDao.delete(attachmentDao.findByPK(dto.getImageId(), userContext), userContext);
+		}
+		super.delete(dto, userContext);
 	}
 
 	@Override

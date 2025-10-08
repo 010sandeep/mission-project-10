@@ -26,9 +26,7 @@ import com.rays.service.UserServiceInt;
 @RequestMapping(value = "Auth")
 public class LoginCtl extends BaseCtl<UserForm, UserDTO, UserServiceInt> {
 
-	@Autowired
-	public UserServiceInt service;
-
+	
 	@Autowired
 	private JWTUtil jwtUtil;
 

@@ -24,6 +24,7 @@ public class ORSProjectJWTTokenApplication {
 				.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
+				
 			}
 		};
 		return w;
