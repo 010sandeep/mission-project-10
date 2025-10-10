@@ -7,10 +7,9 @@ import { HttpServiceService } from './http-service.service';
   providedIn: 'root'
 })
 export class ServiceLocatorService {
-
-   httpService:any = null;
-  router:any = null;
-  endpoints:any = null;
+  httpService: any = null;
+  router: any = null;
+  endpoints: any = null;
 
   constructor(private hs: HttpServiceService, private r: Router, private ep: EndpointServiceService) {
     this.httpService = hs;
@@ -18,13 +17,13 @@ export class ServiceLocatorService {
     this.endpoints = ep;
   }
 
-  getPathVariable(route: ActivatedRoute, callback:any) {
+  getPathVariable(route: ActivatedRoute, callback: any) {
     route.params.subscribe(params => {
       callback(params)
     });
   }
 
-  forward(page:any) {
+  forward(page: any) {
     this.router.navigateByUrl(page);
   }
 }

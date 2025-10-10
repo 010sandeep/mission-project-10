@@ -6,7 +6,19 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class HttpServiceService {
-  constructor(private httpClient: HttpClient, private router: Router) {
+
+   token:any = '';
+
+  setToken(token: any) {
+    this.token = localStorage.getItem('token');
+    //  console.log(this.token + '----> inside setToken');
+  }
+
+  getToken() {
+    console.log(localStorage.getItem('token') + '====>> getToken');
+    return localStorage.getItem('token');
+  }
+    constructor(private httpClient: HttpClient, private router: Router) {
 
   }
 
