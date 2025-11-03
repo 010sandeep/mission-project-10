@@ -10,13 +10,11 @@ import java.util.ResourceBundle;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.engine.jdbc.connections.spi.ConnectionProvider;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,8 +40,6 @@ public class JasperCtl extends BaseCtl<MarksheetForm, MarksheetDTO, MarksheetSer
 //	  @Autowired 
 	private SessionFactory sessionFactory = null;
 
-	@Autowired
-	ServletContext context;
 
 	@PersistenceContext
 	protected EntityManager entityManager;
@@ -56,7 +52,6 @@ public class JasperCtl extends BaseCtl<MarksheetForm, MarksheetDTO, MarksheetSer
 
 		ResourceBundle rb = ResourceBundle.getBundle("application");
 
-		String path = context.getRealPath(rb.getString("jasper"));
 
 		Connection con = null;
 
